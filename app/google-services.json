@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "992821316197",
+    "project_id": "user-hub-app",
+    "storage_bucket": "user-hub-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992821316197:android:5a1e6bec8b173f2ac9548c",
+        "android_client_info": {
+          "package_name": "com.example.userhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy4c-mi5oL2o0PCbkFvNU5sRNs9agGXaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
