@@ -16,7 +16,8 @@ import com.example.userhub.ui.screens.SignupScreen
 sealed class AuthScreen(val route: String) {
     data object Login : AuthScreen("login")
     data object Signup : AuthScreen("signup")
-    data object Home : AuthScreen("home")
+    data object Home : AuthScreen("home/{uid}")
+    data object Profile : AuthScreen("profile")
 }
 
 @Composable
@@ -28,10 +29,10 @@ fun AuthNavGraph(navController: NavHostController) {
     NavHost(navController, startDestination = AuthScreen.Login.route) {
         composable(AuthScreen.Login.route) { LoginScreen(authState.value, navController, authViewModel::login) }
         composable(AuthScreen.Signup.route) { SignupScreen(authState.value, navController, authViewModel::signup) }
-        composable("home/{uid}") { backStackEntry ->
+        composable(AuthScreen.Home.route) { backStackEntry ->
             val uid = backStackEntry.arguments?.getString("uid") ?: ""
             HomeScreen(navController, profileViewModel::loadUser, authViewModel::logout, uid)
         }
-        composable("profile") { ProfileScreen(userState, navController = navController, profileViewModel::updateUserProfile) }
+        composable(AuthScreen.Profile.route) { ProfileScreen(userState, navController = navController, profileViewModel::updateUserProfile) }
     }
 }
