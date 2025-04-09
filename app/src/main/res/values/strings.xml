@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">User Hub</string>
+    <string name="placeholder_result">Placeholder result text</string>
 </resources>
